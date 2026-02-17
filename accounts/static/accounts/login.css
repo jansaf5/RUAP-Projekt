@@ -1,0 +1,36 @@
+body {
+    background: url('/static/img/login-register.jpg') no-repeat center center fixed;
+    background-size: cover;
+    background-color: #e8f5e9;
+    font-family: 'Arial', sans-serif;
+}
+.login-container {
+    min-height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login-card {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+}
+.login-card h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #000000;
+}
+.btn-primary {
+    background-color: #388e3c;
+    border: none;
+}
+.btn-primary:hover {
+    background-color: #2e7d32;
+}
+.form-control:focus {
+    border-color: #66bb6a;
+    box-shadow: 0 0 5px rgba(102, 187, 106, 0.5);
+}

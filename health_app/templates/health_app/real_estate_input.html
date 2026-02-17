@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan zdravlja | Unos</title>
+    <link rel="stylesheet" href="../../static/health_app/real_estate_input.css">
+</head>
+<body>
+{% extends 'health_app/base.html' %}
+
+{% block title %}Unos | Nekretnine{% endblock %}
+
+{% block content %}
+    <div class="container-1">
+        <h2>Unos nekretnine</h2>
+        <form method="POST" action="">
+            {% csrf_token %}
+            <div class="form-row">
+                <div class="form-group-half">
+                    <label for="area">Površina (sq ft)</label>
+                    <input type="number" id="area" name="area" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group-half">
+                    <label for="bedrooms">Spavaće sobe</label>
+                    <input type="number" id="bedrooms" name="bedrooms" required>
+                </div>
+                <div class="form-group-half">
+                    <label for="bathrooms">Kupaonice</label>
+                    <input type="number" id="bathrooms" name="bathrooms" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group-half">
+                    <label for="stories">Katovi</label>
+                    <input type="number" id="stories" name="stories" required>
+                </div>
+                <div class="form-group-half">
+                    <label for="parking">Parkiralište</label>
+                    <input type="number" id="parking" name="parking" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group-half">
+                    <label for="mainroad">Glavna cesta</label>
+                    <select id="mainroad" name="mainroad">
+                        <option value="1">Da</option>
+                        <option value="0">Ne</option>
+                    </select>
+                </div>
+                <div class="form-group-half">
+                    <label for="guestroom">Soba za goste</label>
+                    <select id="guestroom" name="guestroom">
+                        <option value="1">Da</option>
+                        <option value="0">Ne</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group-half">
+                    <label for="basement">Podrum</label>
+                    <select id="basement" name="basement">
+                        <option value="1">Da</option>
+                        <option value="0">Ne</option>
+                    </select>
+                </div>
+                <div class="form-group-half">
+                    <label for="hotwaterheating">Grijanje toplom vodom</label>
+                    <select id="hotwaterheating" name="hotwaterheating">
+                        <option value="1">Da</option>
+                        <option value="0">Ne</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group-half">
+                    <label for="airconditioning">Klima</label>
+                    <select id="airconditioning" name="airconditioning">
+                        <option value="1">Da</option>
+                        <option value="0">Ne</option>
+                    </select>
+                </div>
+                <div class="form-group-half">
+                    <label for="prefarea">Preferirano područje</label>
+                    <select id="prefarea" name="prefarea">
+                        <option value="1">Da</option>
+                        <option value="0">Ne</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="furnishing">Namještenost</label>
+                <select id="furnishing" name="furnishing">
+                    <option value="0">Nenamješten</option>
+                    <option value="1">Djelomično namješten</option>
+                    <option value="2">Namješteno</option>
+                </select>
+            </div>
+            <button type="submit">Pošalji</button>
+        </form>
+
+    </div>
+{% endblock %}
+</body>
+</html>

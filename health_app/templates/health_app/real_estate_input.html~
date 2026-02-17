@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Plan | Home</title>
+    <link rel="stylesheet" href="../../static/health_app/real_estate_input.css">
+</head>
+<body>
+{% extends 'health_app/base.html' %}
+
+{% block title %}Home | Real Estates{% endblock %}
+
+{% block content %}
+    <div class="container-1">
+        <h2>Real Estate Listing</h2>
+        <form>
+            <div class="form-row">
+                <div class="form-group-half">
+                    <label for="price">Price</label>
+                    <input type="number" id="price" name="price" required>
+                </div>
+                <div class="form-group-half">
+                    <label for="area">Area (sq ft)</label>
+                    <input type="number" id="area" name="area" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group-half">
+                    <label for="bedrooms">Bedrooms</label>
+                    <input type="number" id="bedrooms" name="bedrooms" required>
+                </div>
+                <div class="form-group-half">
+                    <label for="bathrooms">Bathrooms</label>
+                    <input type="number" id="bathrooms" name="bathrooms" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group-half">
+                    <label for="stories">Stories</label>
+                    <input type="number" id="stories" name="stories" required>
+                </div>
+                <div class="form-group-half">
+                    <label for="parking">Parking</label>
+                    <input type="number" id="parking" name="parking" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group-half">
+                    <label for="mainroad">Main Road</label>
+                    <select id="mainroad" name="mainroad">
+                        <option value="true">Yes</option>
+                        <option value="false">No</option>
+                    </select>
+                </div>
+                <div class="form-group-half">
+                    <label for="guestroom">Guest Room</label>
+                    <select id="guestroom" name="guestroom">
+                        <option value="true">Yes</option>
+                        <option value="false">No</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group-half">
+                    <label for="basement">Basement</label>
+                    <select id="basement" name="basement">
+                        <option value="true">Yes</option>
+                        <option value="false">No</option>
+                    </select>
+                </div>
+                <div class="form-group-half">
+                    <label for="hotwaterheating">Hot Water Heating</label>
+                    <select id="hotwaterheating" name="hotwaterheating">
+                        <option value="true">Yes</option>
+                        <option value="false">No</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group-half">
+                    <label for="airconditioning">Air Conditioning</label>
+                    <select id="airconditioning" name="airconditioning">
+                        <option value="true">Yes</option>
+                        <option value="false">No</option>
+                    </select>
+                </div>
+                <div class="form-group-half">
+                    <label for="prefarea">Preferred Area</label>
+                    <select id="prefarea" name="prefarea">
+                        <option value="true">Yes</option>
+                        <option value="false">No</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="furnishing">Furnishing Status</label>
+                <select id="furnishing" name="furnishing">
+                    <option value="unfurnished">Unfurnished</option>
+                    <option value="semi-furnished">Semi-Furnished</option>
+                    <option value="furnished">Furnished</option>
+                </select>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+{% endblock %}
+</body>
+</html>

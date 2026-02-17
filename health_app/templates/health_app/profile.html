@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan zdravlja | Profil</title>
+    <link rel="stylesheet" href="../../static/health_app/profile.css">
+</head>
+
+{% extends 'health_app/base.html' %}
+
+{% block title %}Profil | Nekretnine{% endblock %}
+
+
+{% block content %}
+    {% if predicted_price != "No prediction available" %}
+        <h1>Vaša predviđena cijena kuće</h1>
+        <p class="latest-price"><strong>Zadnje predviđanje:</strong> ${{ predicted_price }}</p>
+    {% endif %}
+
+
+    <h3>Vaši unosi nekretnina</h3>
+    {% if real_estates %}
+        <table border="1">
+            <tr>
+                <th>Cijena</th>
+                <th>Površina</th>
+                <th>Spavaće sobe</th>
+                <th>Kupaonice</th>
+                <th>Katovi</th>
+                <th>Parkiralište</th>
+                <th>Glavna cesta</th>
+                <th>Soba za goste</th>
+                <th>Podrum</th>
+                <th>Grijanje toplom vodom</th>
+                <th>Klima</th>
+                <th>Preferirano područje</th>
+                <th>Namještenost</th>
+            </tr>
+            {% for estate in real_estates %}
+            <tr>
+                <td>${{ estate.price }}</td>
+                <td>{{ estate.area }}</td>
+                <td>{{ estate.bedrooms }}</td>
+                <td>{{ estate.bathrooms }}</td>
+                <td>{{ estate.stories }}</td>
+                <td>{{ estate.parking }}</td>
+                <td>{{ estate.mainroad|yesno:"Da,Ne" }}</td>
+                <td>{{ estate.guestroom|yesno:"Da,Ne" }}</td>
+                <td>{{ estate.basement|yesno:"Da,Ne" }}</td>
+                <td>{{ estate.hotwaterheating|yesno:"Da,Ne" }}</td>
+                <td>{{ estate.airconditioning|yesno:"Da,Ne" }}</td>
+                <td>{{ estate.prefarea|yesno:"Da,Ne" }}</td>
+                <td>{{ estate.furnishingstatus }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>Nema unesenih nekretnina.</p>
+    {% endif %}
+
+    <a href="{% url 'real_estate' %}" class="predict-btn">Predvidi novu</a>
+{% endblock %}
+</html>

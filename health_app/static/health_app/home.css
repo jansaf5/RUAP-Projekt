@@ -1,0 +1,49 @@
+/* Apply two background images to the entire page */
+body {
+    background: 
+        url('/static/img/skyscrapper.jpg') no-repeat left center, /* Left image */
+        url('/static/img/skyscrapper2.jpg') no-repeat right center;
+    background-size: 50vw auto, 50vw auto; /* Adjust sizes of the images and gradient */
+    background-position: left center, right center; /* Position the images */
+    background-attachment: scroll; /* Keeps the images fixed in place while scrolling */
+    min-height: 100vh; /* Ensure the images cover at least the full height of the viewport */
+    margin: 0;
+    padding: 0;
+    color: white; /* Makes text readable against the background */
+    position: relative; /* Ensure positioning context for the overlay */
+}
+
+
+/* Optional: Apply some overlay to make the text more readable */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Ensure the overlay stays behind the content */
+}
+
+/* Header content remains on top */
+header {
+    position: relative;
+    z-index: 1;
+}
+
+.card {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.9); /* Slight transparency */
+    backdrop-filter: blur(5px); /* Adds a blur effect */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    text-align: center;
+    color: #1f2c20;
+}
+
+.white-text {
+    color: #ffffff;
+}

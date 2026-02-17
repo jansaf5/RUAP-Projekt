@@ -1,0 +1,57 @@
+body {
+    background:
+            url('/static/img/skyscrapper.jpg') no-repeat left center, /* Left image */
+            url('/static/img/skyscrapper2.jpg') no-repeat right center;
+    background-size: 50vw auto, 50vw auto; /* Adjust sizes of the images and gradient */
+    background-position: left center, right center; /* Position the images */
+    background-attachment: scroll; /* Keeps the images fixed in place while scrolling */
+    min-height: 100vh; /* Ensure the images cover at least the full height of the viewport */
+    margin: 0;
+    padding: 0;
+    color: white; /* Makes text readable against the background */
+    position: relative; /* Ensure positioning context for the overlay */
+}
+
+.container-1 {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+.form-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+.form-row {
+    display: flex;
+    gap: 10px;
+}
+.form-group-half {
+    flex: 1;
+}
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+input, select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+button {
+    width: 100%;
+    padding: 10px;
+    background: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+button:hover {
+    background: #555;
+}
